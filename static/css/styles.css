@@ -15,7 +15,7 @@ body {
     height: calc(100vh - 8em);
     padding: 4em;
     grid-template-columns: 50px 1fr 1fr 200px;
-    grid-template-rows: 212px 100fr 1fr 1fr 1fr;
+    grid-template-rows: 230px 100fr 1fr 1fr 1fr;
     grid-column-gap: 8em;
     grid-template-areas: "asset-top logo logo social" "name character-name avatar avatar" "about character-description avatar avatar" "asset-bottom character-text avatar avatar" "asset-bottom learn-more arrow other-line";
 }
@@ -28,6 +28,14 @@ body {
     align-items: center;
 }
 
+.arrow {
+    grid-area: arrow;
+    border: 1px solid red;
+    background-image: url('../images/down-arrow.svg');
+    background-repeat:no-repeat;
+    background-position: left bottom;
+}
+
 .learn-more {
     grid-area: learn-more;
     border: 1px solid red;
@@ -35,6 +43,10 @@ body {
     align-items: flex-end;
     font-size: 25px;
     text-transform: uppercase;
+    background-image: url('../images/learnMore.svg');
+    background-repeat: no-repeat;
+    background-position: left 170px bottom 5px;
+
 }
 
 .asset.top {
@@ -194,4 +206,14 @@ body {
     .character-image {
         grid-area: image;
     }
+}
+
+.linkedin {
+    height: 50px;
+    width: 50px;
+}
+
+.github {
+    height: 50px;
+    width: 50px;
 }
