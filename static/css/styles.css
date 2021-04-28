@@ -144,7 +144,7 @@ body {
 }
 
 .character-image {
-    width: 100%;
+    max-width: 100%;
     border-radius: 50%;
 }
 
@@ -162,6 +162,7 @@ body {
     font-size: 30px;
 }
 
+/*
 @media screen and (min-width: 1024px) {
     .character-grid {
         display: grid;
@@ -206,6 +207,22 @@ body {
     .character-image {
         grid-area: image;
     }
+}
+*/
+
+@media screen and (max-width: 1440px) {
+    .grid {
+        column-gap: 2em;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 50px 1fr 200px;
+        grid-template-rows: 230px 100px 1fr 1fr 1fr;
+        grid-template-areas: "asset-top logo logo social" "name avatar social" "about character";
+    }
+  
 }
 
 .linkedin {

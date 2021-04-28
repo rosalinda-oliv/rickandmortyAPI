@@ -1,8 +1,11 @@
 
 export default class Character {
-    constructor({name, image}) {
+    constructor({name, image, gender, species, status}) {
         this.name = name
-        this.image= image
+        this.image = image
+        this.gender = gender
+        this.species = species
+        this.status = status
         this.$characterImageContainer = document.querySelector('#character-image-container')
         this.$characterNameContainer = document.querySelector('#character-name-container')
         this.$characterDescriptionContainer = document.querySelector('#character-description-container')
@@ -25,9 +28,9 @@ export default class Character {
     buildDescription() {
         return `
             <div class="character-labels">
-                <h3 class="character-label">Gender: sdgdgs</h3>
-                <h3 class="character-label">Species:dgdsg</h3>
-                <h3 class="character-label">Status:sgaeedv</h3>
+                <h3 class="character-label">${this.gender}</h3>
+                <h3 class="character-label">${this.species}</h3>
+                <h3 class="character-label">${this.status}</h3>
             </div>
         `
 
