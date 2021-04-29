@@ -34,11 +34,10 @@ body {
 }
 
 .arrow {
-    user-select: none;
     grid-area: arrow;
     cursor: pointer;
     background-image: url('../images/down-arrow.svg');
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-position: left bottom;
 }
 
@@ -99,7 +98,6 @@ body {
     grid-area: character-name;
     display: flex;
     align-items: center;
-    padding-inline-start: 1rem;
 }
 
 .character-description-container {
@@ -118,10 +116,6 @@ body {
     border-radius: 50%;
     display: inline-flex;
     margin-inline: 5px;
-}
-
-.links {
-    writing-mode: vertical-rl;
 }
 
 .line {
@@ -145,6 +139,7 @@ body {
 .character-image {
     max-width: 100%;
     border-radius: 50%;
+    box-shadow: 10px 10px 15px #002C33;
 }
 
 .character-label {
@@ -155,16 +150,38 @@ body {
     text-align: left;
     font-size: 25px;
     font-weight: 400;
+    box-shadow: 10px 10px 20px #002C33;
 }
 
 .character-name {
+    position: relative;
     font-size: 30px;
+}
+
+.character-name h2:after {
+    content: "";
+    width: 87px;
+    height: 6px;
+    background-color:#F7391C;
+    display: inline-flex;
+    position: absolute;
+    left: calc(100% + 5px);
+    top: 55%;
+}
+
+.placeholder-container {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
 }
 
 .character-name-placeholder {
     color: rgb(0, 0, 0, 0.1);
-    font-size: 300px;
-    position: absolute;
+    font-size: 400px;
+    position: relative;
     left: 0;
     right: 0;
     bottom: 0;
@@ -209,6 +226,14 @@ body {
         margin-top: 1em;
     }
 
+    .character-name h2:after {
+        left: 6.5em;
+        position: absolute;
+        top: 53%;
+        width: 100px;
+        height: 8px;
+    }
+
     .social {
         text-align: center;
         margin-top: 2em;
@@ -225,7 +250,6 @@ body {
 
     .learn-more {
         display: none;
-        padding-inline-start: 1em;
     }
 
     .social a {
