@@ -2,11 +2,11 @@ import API from './api.js';
 import Character from './character.js';
 
 const api = new API();
-let currentCaracter = 4;
+let currentCharacter = 1;
 const $loadNext = document.querySelector('#load-next');
 
 $loadNext.addEventListener('click', async () => {
-    const characterData = await api.getCharacter(++currentCaracter)
+    const characterData = await api.getCharacter(currentCharacter++)
     new Character(characterData);
 })
 
@@ -15,4 +15,4 @@ async function initApp(initCharacterId) {
     console.log(characterData);
     new Character(characterData);
 }
-initApp(firstCharacter);
+initApp(currentCharacter);

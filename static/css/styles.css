@@ -1,16 +1,18 @@
 body {
     margin: 0;
     background: #00a5be;
-    font-family: system-ui;
+    font-family: 'New Tegomin', serif;
 }
 
 .logo {
     grid-area: logo;
     margin: 0 auto 2em;
-    display: block; 
+    display: block;
 }
 
 .grid {
+    position: relative;
+    z-index: 2;
     display: grid;
     height: calc(100vh - 8em);
     padding: 4em;
@@ -22,15 +24,18 @@ body {
 
 .character-image-container {
     grid-area: avatar;
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.social a {
+    text-decoration: none;
+}
+
 .arrow {
     grid-area: arrow;
-    border: 1px solid red;
+    cursor: pointer;
     background-image: url('../images/down-arrow.svg');
     background-repeat:no-repeat;
     background-position: left bottom;
@@ -38,20 +43,18 @@ body {
 
 .learn-more {
     grid-area: learn-more;
-    border: 1px solid red;
     display: flex;
     align-items: flex-end;
     font-size: 25px;
     text-transform: uppercase;
     background-image: url('../images/learnMore.svg');
     background-repeat: no-repeat;
-    background-position: left 170px bottom 5px;
-
+    background-position: left 170px bottom 8px;
+    background-size: 8.3em;;
 }
 
 .asset.top {
     grid-area: asset-top;
-    border: 1px solid black;
 }
 .asset {
     writing-mode: vertical-rl;
@@ -61,7 +64,6 @@ body {
 
 .asset.bottom {
     grid-area: asset-bottom;
-    border: 1px solid green;
     justify-content: flex-end;
 }
 
@@ -75,12 +77,10 @@ body {
 
 .navigation.name {
     grid-area: name;
-    border: 1px solid purple;
 }
 
 .navigation.about {
     grid-area: about;
-    border: 1px solid purple;
 }
 
 .navigation a {
@@ -92,11 +92,10 @@ body {
 
 .social {
     grid-area: social;
-    border: 1px solid red;
 }
 
 .character-name-container {
-    border: 1px solid blue;;
+    grid-area: character-name;
     display: flex;
     align-items: center;
     padding-inline-start: 1rem;
@@ -104,7 +103,6 @@ body {
 
 .character-description-container {
     grid-area: character-description;
-
 }
 
 .navigation .text {
@@ -162,54 +160,6 @@ body {
     font-size: 30px;
 }
 
-/*
-@media screen and (min-width: 1024px) {
-    .character-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "name image" "labels image";
-    }
-
-    .character-image {
-        grid-area: name;
-        width: 300px;
-        border-radius: 50%;
-    }
-
-    .character-name {
-        text-align: left;
-    }
-
-    .character-name h2 {
-        text-align: left;
-        font-size: 50px;
-        position: relative;
-        display: inline-flex;
-
-    }
-    
-    .character-name h2:after {
-        content: "";
-        width: 87px;
-        height: 6px;
-        background-color: #f7391c;
-        display: inline-flex;
-        position: absolute;
-        left: calc(100% + 5px);
-        top: 50%;
-    }
-    
-    .character-labels {
-        grid-area: labels;
-        max-width: 300px;
-    }
-
-    .character-image {
-        grid-area: image;
-    }
-}
-*/
-
 @media screen and (max-width: 1440px) {
     .grid {
         column-gap: 2em;
@@ -217,12 +167,59 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
+   
     .grid {
-        grid-template-columns: 50px 1fr 200px;
-        grid-template-rows: 230px 100px 1fr 1fr 1fr;
-        grid-template-areas: "asset-top logo logo social" "name avatar social" "about character";
+        height: auto;
+        padding: 2em 0;
+        width: calc(100vw - 2em);
+        margin: 0 auto;
+        column-gap: 1em;
+        grid-template-columns: 50px 1fr 1fr;
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas: "logo logo logo " "name avatar avatar" "name character-name character-name" "about character-description character-description" "arrow arrow arrow" "social social social";
     }
-  
+
+    .logo {
+        max-width: 100%;
+    }
+
+    .character-name {
+        text-align: center;
+    }
+
+    .character-name-container {
+        justify-content: center;
+        margin-top: 1em;
+    }
+
+    .social {
+        text-align: center;
+        margin-top: 2em;
+    }
+
+    .asset{
+        display: none;
+    }
+
+    .arrow {
+        height: 50px;
+        background-position: center;
+    }
+
+    .learn-more {
+        display: none;
+        padding-inline-start: 1em;
+    }
+
+    .social a {
+        margin-left: 2em;
+    }
+
+    .social a:first-child {
+        margin-left: 0;
+    }
+
+    
 }
 
 .linkedin {
