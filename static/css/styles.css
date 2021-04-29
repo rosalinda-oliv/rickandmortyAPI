@@ -34,6 +34,7 @@ body {
 }
 
 .arrow {
+    user-select: none;
     grid-area: arrow;
     cursor: pointer;
     background-image: url('../images/down-arrow.svg');
@@ -158,6 +159,22 @@ body {
 
 .character-name {
     font-size: 30px;
+}
+
+.character-name-placeholder {
+    color: rgb(0, 0, 0, 0.1);
+    font-size: 300px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    text-transform: uppercase;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    white-space: nowrap;
 }
 
 @media screen and (max-width: 1440px) {
