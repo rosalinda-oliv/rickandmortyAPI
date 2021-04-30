@@ -6,7 +6,7 @@ body {
 
 .logo {
     grid-area: logo;
-    margin: 0 auto 2em;
+    margin: 0 45% 2em;
     display: block;
 }
 
@@ -214,7 +214,7 @@ body {
     }
 
     .logo {
-        max-width: 100%;
+        margin: 0 37% 1em;
     }
 
     .character-name {
